@@ -1,0 +1,34 @@
+# 3DOF Flipper
+# The assets folder must be added to the parser as a package named assets
+
+directives:
+
+# Add right arm (2DOF IIWA)
+- add_model:
+    name: 2dofIIWA
+    file: package://assets/flipper/twoDOF_iiwa7_with_box_collision.sdf
+- add_weld:
+    parent: world
+    child: 2dofIIWA::iiwa_twoDOF_link_0
+    X_PC:
+        translation: [0 , 0.55, 0]
+        rotation: !Rpy { deg: [0, 0, -90]}
+
+# Add left arm (1DOF IIWA)
+- add_model:
+    name: 1dofIIWA
+    file: package://assets/flipper/oneDOF_iiwa7_with_box_collision.sdf
+- add_weld:
+    parent: world
+    child: 1dofIIWA::iiwa_oneDOF_link_0
+    X_PC:
+        translation: [0 , -0.55, 0]
+        rotation: !Rpy { deg: [0, 0, -90]}
+
+# Add frame (box)
+- add_model:
+    name: box
+    file: package://assets/flipper/box_small.urdf
+- add_weld:
+    parent: world
+    child: box::base

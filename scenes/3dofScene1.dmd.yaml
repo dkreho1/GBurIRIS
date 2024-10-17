@@ -1,0 +1,25 @@
+# Anthropomorphic arm with 1 box
+# The assets folder must be added to the parser as a package named assets
+
+directives:
+
+# Add 3DOF anthropomorphic arm
+- add_model:
+    name: AnthropomorphicArm
+    file: package://assets/AnthropomorphicArm.sdf
+- add_weld:
+    parent: world
+    child: AnthropomorphicArm::AnthropomorphicArmBase
+    X_PC:
+        translation: [0, 0, 0.05]
+        
+# Add box
+- add_model:
+    name: box1
+    file: package://assets/box2.sdf
+- add_weld:
+    parent: world
+    child: box1::box_body
+    X_PC:
+        translation: [-1, 0, 0.5]
+

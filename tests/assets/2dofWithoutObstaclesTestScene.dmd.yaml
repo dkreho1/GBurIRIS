@@ -1,0 +1,13 @@
+# 2DOF
+
+directives:
+
+# Add 2DOF planar arm
+- add_model:
+    name: 2dofPlanarArm
+    file: package://testAssets/2dofPlanarArm.sdf
+- add_weld:
+    parent: world
+    child: 2dofPlanarArm::2dofPlanarBase
+    X_PC:
+        translation: [0, 0, 0.05]

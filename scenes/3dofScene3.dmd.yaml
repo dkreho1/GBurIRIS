@@ -1,0 +1,123 @@
+# Anthropomorphic arm with 12 boxes
+# The assets folder must be added to the parser as a package named assets
+
+directives:
+
+# Add 3DOF anthropomorphic arm
+- add_model:
+    name: AnthropomorphicArm
+    file: package://assets/AnthropomorphicArm.sdf
+- add_weld:
+    parent: world
+    child: AnthropomorphicArm::AnthropomorphicArmBase
+    X_PC:
+        translation: [0, 0, 0.05]
+        
+# Add boxes
+- add_model:
+    name: box1
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box1::box_body
+    X_PC:
+        translation: [-1.5, 0.5, 0.4]
+
+- add_model:
+    name: box2
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box2::box_body
+    X_PC:
+        translation: [-0.5, 1.5, 0.4]
+
+- add_model:
+    name: box3
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box3::box_body
+    X_PC:
+        translation: [-1.5, -0.5, 0.4]
+
+- add_model:
+    name: box4
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box4::box_body
+    X_PC:
+        translation: [-0.5, -1.5, 0.4]
+
+- add_model:
+    name: box5
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box5::box_body
+    X_PC:
+        translation: [1.5, 0.5, 0.4]
+
+- add_model:
+    name: box6
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box6::box_body
+    X_PC:
+        translation: [0.5, 1.5, 0.4]
+
+- add_model:
+    name: box7
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box7::box_body
+    X_PC:
+        translation: [1.5, -0.5, 0.4]
+
+- add_model:
+    name: box8
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box8::box_body
+    X_PC:
+        translation: [0.5, -1.5, 0.4]
+
+- add_model:
+    name: box9
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box9::box_body
+    X_PC:
+        translation: [-0.5, -0.5, 1.2]
+
+- add_model:
+    name: box10
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box10::box_body
+    X_PC:
+        translation: [0.5, 0.5, 1.2]
+
+- add_model:
+    name: box11
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box11::box_body
+    X_PC:
+        translation: [-0.5, 0.5, 1.2]
+
+- add_model:
+    name: box12
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box12::box_body
+    X_PC:
+        translation: [0.5, -0.5, 1.2]

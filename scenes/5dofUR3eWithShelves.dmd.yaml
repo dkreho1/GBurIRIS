@@ -1,0 +1,39 @@
+# 5DOF UR3e with WSG and shelves scene
+# The assets folder must be added to the parser as a package named assets
+
+directives:
+
+# Add UR3e
+- add_model:
+    name: ur3e
+    file: package://assets/ur_description/urdf/5dof_ur3e_cylinders_collision.urdf
+    default_joint_positions:
+        ur_shoulder_pan_joint: [-1.57]
+        ur_shoulder_lift_joint: [-1.57]
+        ur_elbow_joint: [0]
+        ur_wrist_1_joint: [-1.57]
+        ur_wrist_3_joint: [-1.57]
+- add_weld:
+    parent: world
+    child: ur3e::ur_base_link
+    
+# Add WSG
+- add_model:
+    name: wsg
+    file: package://assets/wsg_50_description/sdf/schunk_wsg_50_welded_fingers.sdf
+- add_weld:
+    parent: ur3e::ur_tool0
+    child: wsg::body
+    X_PC:
+        translation: [0, 0, 0.045]
+        rotation: !Rpy { deg: [90, 0, 90]}
+
+# Add shelves
+- add_model:
+    name: shelves
+    file: package://assets/shelves.sdf
+- add_weld:
+    parent: world
+    child: shelves::shelves_body
+    X_PC:
+        translation: [0.48, 0, 0.4]

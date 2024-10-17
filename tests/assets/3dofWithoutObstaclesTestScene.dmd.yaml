@@ -1,0 +1,14 @@
+# 3DOF
+
+directives:
+
+# Add anthropomorphic arm planar arm
+- add_model:
+    name: AnthropomorphicArm
+    file: package://testAssets/AnthropomorphicArm.sdf
+- add_weld:
+    parent: world
+    child: AnthropomorphicArm::AnthropomorphicArmBase
+    X_PC:
+        translation: [0, 0, 0.05]
+

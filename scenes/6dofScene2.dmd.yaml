@@ -1,0 +1,53 @@
+# 6DOF planar arm with 4 boxes
+# The assets folder must be added to the parser as a package named assets
+
+directives:
+
+# Add 6DOF planar arm
+- add_model:
+    name: 6dofPlanarArm
+    file: package://assets/6dofPlanarArm.sdf
+- add_weld:
+    parent: world
+    child: 6dofPlanarArm::6dofPlanarBase
+    X_PC:
+        translation: [0, 0, 0.05]
+        
+# Add boxes
+- add_model:
+    name: box1
+    file: package://assets/box3.sdf
+- add_weld:
+    parent: world
+    child: box1::box_body
+    X_PC:
+        translation: [-3, 0, 0.5]
+
+- add_model:
+    name: box2
+    file: package://assets/box3.sdf
+- add_weld:
+    parent: world
+    child: box2::box_body
+    X_PC:
+        translation: [3, 0, 0.5]
+
+- add_model:
+    name: box3
+    file: package://assets/box3.sdf
+- add_weld:
+    parent: world
+    child: box3::box_body
+    X_PC:
+        translation: [0, -3, 0.5]
+        rotation: !Rpy { deg: [0, 0, 90] }
+
+- add_model:
+    name: box4
+    file: package://assets/box3.sdf
+- add_weld:
+    parent: world
+    child: box4::box_body
+    X_PC:
+        translation: [0, 3, 0.5]
+        rotation: !Rpy { deg: [0, 0, 90] }

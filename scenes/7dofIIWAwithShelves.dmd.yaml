@@ -1,0 +1,52 @@
+# 7DOF IIWA with WSG and two shelves scene
+# The assets folder must be added to the parser as a package named assets
+
+directives:
+
+# Add IIWA
+- add_model:
+    name: iiwa
+    file: package://assets/iiwa_description/sdf/iiwa7_with_box_collision.sdf
+    default_joint_positions:
+        iiwa_joint_1: [-1.57]
+        iiwa_joint_2: [0.1]
+        iiwa_joint_3: [0]
+        iiwa_joint_4: [-1.2]
+        iiwa_joint_5: [0]
+        iiwa_joint_6: [ 1.6]
+        iiwa_joint_7: [0]
+- add_weld:
+    parent: world
+    child: iiwa::iiwa_link_0
+
+# Add WSG
+- add_model:
+    name: wsg
+    file: package://assets/wsg_50_description/sdf/schunk_wsg_50_welded_fingers.sdf
+- add_weld:
+    parent: iiwa::iiwa_link_7
+    child: wsg::body
+    X_PC:
+        translation: [0, 0, 0.09]
+        rotation: !Rpy { deg: [90, 0, 90]}
+
+# Add first shelves
+- add_model:
+    name: shelves1
+    file: package://assets/shelves.sdf
+- add_weld:
+    parent: world
+    child: shelves1::shelves_body
+    X_PC:
+        translation: [0.48, 0.56, 0.4]
+
+# Add second shelves
+- add_model:
+    name: shelves2
+    file: package://assets/shelves.sdf
+- add_weld:
+    parent: world
+    child: shelves2::shelves_body
+    X_PC:
+        translation: [0.48, -0.56, 0.4]
+

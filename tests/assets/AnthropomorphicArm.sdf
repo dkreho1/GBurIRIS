@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="AnthropomorphicArm">
+    <!-- Manipulatator base -->
+    <link name="AnthropomorphicArmBase">
+      <pose>0 0 0.05 0 0 0</pose>
+      <visual name="AnthropomorphicArmBaseVisual">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <collision name="AnthropomorphicArmBaseCollision">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- First link  -->
+    <link name="AnthropomorphicArmLink1">
+      <pose>0 0 0.15 0 0 0</pose>
+      <visual name="AnthropomorphicArmLink1Visual">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>1 0.4 0 1</ambient>
+          <diffuse>1 0.4 0 1</diffuse>
+          <specular>1 0.4 0 1</specular>
+          <emissive>1 0.4 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="AnthropomorphicArmLink1Collision">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- First joint  -->
+    <joint name="AnthropomorphicArmJoint1" type="revolute">
+      <parent>AnthropomorphicArmBase</parent>
+      <child>AnthropomorphicArmLink1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+      </axis>
+    </joint>
+
+
+    <!-- Second link  -->
+    <link name="AnthropomorphicArmLink2">
+      <pose>0 0 0.2 0 0 0</pose>
+      <visual name="AnthropomorphicArmLink2Visual">
+        <pose>0 0.4 0 1.57 0 0</pose>
+        <geometry>
+          <capsule>
+            <radius>0.1</radius>
+            <length>0.8</length>
+          </capsule>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <collision name="AnthropomorphicArmLink2Collision">
+        <pose>0 0.4 0 1.57 0 0</pose>
+        <geometry>
+          <capsule>
+            <radius>0.1</radius>
+            <length>0.8</length>
+          </capsule>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Second joint  -->
+    <joint name="AnthropomorphicArmJoint2" type="revolute">
+      <parent>AnthropomorphicArmLink1</parent>
+      <child>AnthropomorphicArmLink2</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Third link  -->
+    <link name="AnthropomorphicArmLink3">
+      <pose>0 0.8 0.2 0 0 0</pose>
+      <visual name="AnthropomorphicArmLink3Visual">
+        <pose>0 0.4 0 1.57 0 0</pose>
+        <geometry>
+          <capsule>
+            <radius>0.101</radius>
+            <length>0.8</length>
+          </capsule>
+        </geometry>
+        <material>
+          <ambient>1 0.4 0 1</ambient>
+          <diffuse>1 0.4 0 1</diffuse>
+          <specular>1 0.4 0 1</specular>
+          <emissive>1 0.4 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="AnthropomorphicArmLink3Collision">
+        <pose>0 0.4 0 1.57 0 0</pose>
+        <geometry>
+          <capsule>
+            <radius>0.1</radius>
+            <length>0.8</length>
+          </capsule>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Third joint  -->
+    <joint name="AnthropomorphicArmJoint3" type="revolute">
+      <parent>AnthropomorphicArmLink2</parent>
+      <child>AnthropomorphicArmLink3</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Manipulatator end effector -->
+    <link name="AnthropomorphicArmEndEffector">
+      <pose>0 1.6 0.2 0 0 0</pose>
+    </link>
+
+    <!-- End effector joint  -->
+    <joint name="AnthropomorphicArmJointEndEffector" type="fixed">
+      <parent>AnthropomorphicArmLink3</parent>
+      <child>AnthropomorphicArmEndEffector</child>
+    </joint>
+  </model>
+</sdf>

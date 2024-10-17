@@ -1,0 +1,87 @@
+# 2DOF planar arm with 8 boxes
+# The assets folder must be added to the parser as a package named assets
+
+directives:
+
+# Add 2DOF planar arm
+- add_model:
+    name: 2dofPlanarArm
+    file: package://assets/2dofPlanarArm.sdf
+- add_weld:
+    parent: world
+    child: 2dofPlanarArm::2dofPlanarBase
+    X_PC:
+        translation: [0, 0, 0.05]
+        
+# Add boxes
+- add_model:
+    name: box1
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box1::box_body
+    X_PC:
+        translation: [-1.5, 0.5, 0.4]
+
+- add_model:
+    name: box2
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box2::box_body
+    X_PC:
+        translation: [-0.5, 1.5, 0.4]
+
+- add_model:
+    name: box3
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box3::box_body
+    X_PC:
+        translation: [-1.5, -0.5, 0.4]
+
+- add_model:
+    name: box4
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box4::box_body
+    X_PC:
+        translation: [-0.5, -1.5, 0.4]
+
+- add_model:
+    name: box5
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box5::box_body
+    X_PC:
+        translation: [1.5, 0.5, 0.4]
+
+- add_model:
+    name: box6
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box6::box_body
+    X_PC:
+        translation: [0.5, 1.5, 0.4]
+
+- add_model:
+    name: box7
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box7::box_body
+    X_PC:
+        translation: [1.5, -0.5, 0.4]
+
+- add_model:
+    name: box8
+    file: package://assets/box1.sdf
+- add_weld:
+    parent: world
+    child: box8::box_body
+    X_PC:
+        translation: [0.5, -1.5, 0.4]

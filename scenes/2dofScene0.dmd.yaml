@@ -1,0 +1,43 @@
+# 2DOF planar arm with 3 cylinders
+# The assets folder must be added to the parser as a package named assets
+
+directives:
+
+# Add 2DOF planar arm
+- add_model:
+    name: 2dofPlanarArm
+    file: package://assets/2dofPlanarArm.sdf
+- add_weld:
+    parent: world
+    child: 2dofPlanarArm::2dofPlanarBase
+    X_PC:
+        translation: [0, 0, 0.05]
+        
+# Add cylinders
+- add_model:
+    name: cylinder1
+    file: package://assets/cylinder1.sdf
+- add_weld:
+    parent: world
+    child: cylinder1::cylinder_body
+    X_PC:
+        translation: [-1.2, 0.6, 0.25]
+
+- add_model:
+    name: cylinder2
+    file: package://assets/cylinder1.sdf
+- add_weld:
+    parent: world
+    child: cylinder2::cylinder_body
+    X_PC:
+        translation: [-0.8, -0.8, 0.25]
+
+- add_model:
+    name: cylinder3
+    file: package://assets/cylinder1.sdf
+- add_weld:
+    parent: world
+    child: cylinder3::cylinder_body
+    X_PC:
+        translation: [1.2, -0.6, 0.25]
+

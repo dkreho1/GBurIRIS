@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="3dofPlanar">
+    <!-- Manipulatator base -->
+    <link name="3dofPlanarBase">
+      <pose>0 0 0 0 0 0</pose>
+      <visual name="3dofPlanarBaseVisual">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.68 0.85 0.9 1</ambient>
+          <diffuse>0.68 0.85 0.9 1</diffuse>
+          <specular>0.68 0.85 0.9 1</specular>
+          <emissive>0.68 0.85 0.9 1</emissive>
+        </material>
+      </visual>
+      <collision name="3dofPlanarBaseCollision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- First link  -->
+    <link name="3dofPlanarLink1">
+      <pose>0 0 0.1 0 0 0</pose>
+      <visual name="3dofPlanarLink1Visual1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <visual name="3dofPlanarLink1Visual2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <visual name="3dofPlanarLink1Visual3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <collision name="3dofPlanarLink1Collision1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="3dofPlanarLink1Collision2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="3dofPlanarLink1Collision3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- First joint  -->
+    <joint name="3dofPlanarJoint1" type="revolute">
+      <parent>3dofPlanarBase</parent>
+      <child>3dofPlanarLink1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Second link  -->
+    <link name="3dofPlanarLink2">
+      <pose>0 0.8 0.2 0 0 0</pose>
+      <visual name="3dofPlanarLink2Visual1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <visual name="3dofPlanarLink2Visual2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <visual name="3dofPlanarLink2Visual3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <collision name="3dofPlanarLink2Collision1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="3dofPlanarLink2Collision2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="3dofPlanarLink2Collision3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Second joint  -->
+    <joint name="3dofPlanarJoint2" type="revolute">
+      <parent>3dofPlanarLink1</parent>
+      <child>3dofPlanarLink2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+      </axis>
+    </joint>
+
+   <!-- Third link  -->
+    <link name="3dofPlanarLink3">
+      <pose>0 1.6 0.3 0 0 0</pose>
+      <visual name="3dofPlanarLink3Visual1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <visual name="3dofPlanarLink3Visual2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <visual name="3dofPlanarLink3Visual3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <collision name="3dofPlanarLink3Collision1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="3dofPlanarLink3Collision2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="3dofPlanarLink3Collision3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Third joint  -->
+    <joint name="3dofPlanarJoint3" type="revolute">
+      <parent>3dofPlanarLink2</parent>
+      <child>3dofPlanarLink3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Manipulatator end effector -->
+    <link name="3dofPlanarEndEffector">
+      <pose>0 2.4 0.3 0 0 0</pose>
+    </link>
+
+    <!-- End effector joint  -->
+    <joint name="3dofPlanarJointEndEffector" type="fixed">
+      <parent>3dofPlanarLink3</parent>
+      <child>3dofPlanarEndEffector</child>
+    </joint>
+  </model>
+</sdf>

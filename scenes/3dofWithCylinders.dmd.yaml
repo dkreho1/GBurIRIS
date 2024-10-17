@@ -1,0 +1,42 @@
+# 3DOF with cylinders
+
+directives:
+
+# Add 3DOF planar arm
+- add_model:
+    name: 3dofPlanarArm
+    file: file:///home/dzenan/Desktop/MasterThesis/assets/3dofPlanarArm.sdf
+- add_weld:
+    parent: world
+    child: 3dofPlanarArm::3dofPlanarBase
+    X_PC:
+        translation: [0, 0, 0.05]
+        
+# Add cylinders
+- add_model:
+    name: cylinder1
+    file: file:///home/dzenan/Desktop/MasterThesis/assets/cylinder.sdf
+- add_weld:
+    parent: world
+    child: cylinder1::cylinder_body
+    X_PC:
+        translation: [-1.8, 0.9, 0.25]
+
+- add_model:
+    name: cylinder2
+    file: file:///home/dzenan/Desktop/MasterThesis/assets/cylinder.sdf
+- add_weld:
+    parent: world
+    child: cylinder2::cylinder_body
+    X_PC:
+        translation: [-1.2, -1.2, 0.25]
+
+- add_model:
+    name: cylinder3
+    file: file:///home/dzenan/Desktop/MasterThesis/assets/cylinder.sdf
+- add_weld:
+    parent: world
+    child: cylinder3::cylinder_body
+    X_PC:
+        translation: [1.8, -0.9, 0.25]
+

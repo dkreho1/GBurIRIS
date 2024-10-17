@@ -1,0 +1,575 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="6dofPlanar">
+    <!-- Manipulatator base -->
+    <link name="6dofPlanarBase">
+      <pose>0 0 0 0 0 0</pose>
+      <visual name="6dofPlanarBaseVisual">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <collision name="6dofPlanarBaseCollision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- First link  -->
+    <link name="6dofPlanarLink1">
+      <pose>0 0 0.1 0 0 0</pose>
+      <visual name="6dofPlanarLink1Visual1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>1 0.4 0 1</ambient>
+          <diffuse>1 0.4 0 1</diffuse>
+          <specular>1 0.4 0 1</specular>
+          <emissive>1 0.4 0 1</emissive>
+        </material>
+      </visual>
+      <visual name="6dofPlanarLink1Visual2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0.4 0 1</ambient>
+          <diffuse>1 0.4 0 1</diffuse>
+          <specular>1 0.4 0 1</specular>
+          <emissive>1 0.4 0 1</emissive>
+        </material>
+      </visual>
+      <visual name="6dofPlanarLink1Visual3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>1 0.4 0 1</ambient>
+          <diffuse>1 0.4 0 1</diffuse>
+          <specular>1 0.4 0 1</specular>
+          <emissive>1 0.4 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="6dofPlanarLink1Collision1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="6dofPlanarLink1Collision2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="6dofPlanarLink1Collision3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- First joint  -->
+    <joint name="6dofPlanarJoint1" type="revolute">
+      <parent>6dofPlanarBase</parent>
+      <child>6dofPlanarLink1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Second link  -->
+    <link name="6dofPlanarLink2">
+      <pose>0 0.8 0.2 0 0 0</pose>
+      <visual name="6dofPlanarLink2Visual1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <visual name="6dofPlanarLink2Visual2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <visual name="6dofPlanarLink2Visual3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <collision name="6dofPlanarLink2Collision1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="6dofPlanarLink2Collision2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="6dofPlanarLink2Collision3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Second joint  -->
+    <joint name="6dofPlanarJoint2" type="revolute">
+      <parent>6dofPlanarLink1</parent>
+      <child>6dofPlanarLink2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+      </axis>
+    </joint>
+
+
+    <!-- Third link  -->
+    <link name="6dofPlanarLink3">
+      <pose>0 1.6 0.3 0 0 0</pose>
+      <visual name="6dofPlanarLink3Visual1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>1 0.4 0 1</ambient>
+          <diffuse>1 0.4 0 1</diffuse>
+          <specular>1 0.4 0 1</specular>
+          <emissive>1 0.4 0 1</emissive>
+        </material>
+      </visual>
+      <visual name="6dofPlanarLink3Visual2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0.4 0 1</ambient>
+          <diffuse>1 0.4 0 1</diffuse>
+          <specular>1 0.4 0 1</specular>
+          <emissive>1 0.4 0 1</emissive>
+        </material>
+      </visual>
+      <visual name="6dofPlanarLink3Visual3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>1 0.4 0 1</ambient>
+          <diffuse>1 0.4 0 1</diffuse>
+          <specular>1 0.4 0 1</specular>
+          <emissive>1 0.4 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="6dofPlanarLink3Collision1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="6dofPlanarLink3Collision2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="6dofPlanarLink3Collision3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Third joint  -->
+    <joint name="6dofPlanarJoint3" type="revolute">
+      <parent>6dofPlanarLink2</parent>
+      <child>6dofPlanarLink3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+      </axis>
+    </joint>
+
+
+    <!-- Fourth link  -->
+    <link name="6dofPlanarLink4">
+      <pose>0 2.4 0.4 0 0 0</pose>
+      <visual name="6dofPlanarLink4Visual1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <visual name="6dofPlanarLink4Visual2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <visual name="6dofPlanarLink4Visual3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <collision name="6dofPlanarLink4Collision1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="6dofPlanarLink4Collision2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="6dofPlanarLink4Collision3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Fourth joint  -->
+    <joint name="6dofPlanarJoint4" type="revolute">
+      <parent>6dofPlanarLink3</parent>
+      <child>6dofPlanarLink4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+      </axis>
+    </joint>
+
+
+    <!-- Fifth link  -->
+    <link name="6dofPlanarLink5">
+      <pose>0 3.2 0.5 0 0 0</pose>
+      <visual name="6dofPlanarLink5Visual1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>1 0.4 0 1</ambient>
+          <diffuse>1 0.4 0 1</diffuse>
+          <specular>1 0.4 0 1</specular>
+          <emissive>1 0.4 0 1</emissive>
+        </material>
+      </visual>
+      <visual name="6dofPlanarLink5Visual2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0.4 0 1</ambient>
+          <diffuse>1 0.4 0 1</diffuse>
+          <specular>1 0.4 0 1</specular>
+          <emissive>1 0.4 0 1</emissive>
+        </material>
+      </visual>
+      <visual name="6dofPlanarLink5Visual3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>1 0.4 0 1</ambient>
+          <diffuse>1 0.4 0 1</diffuse>
+          <specular>1 0.4 0 1</specular>
+          <emissive>1 0.4 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="6dofPlanarLink5Collision1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="6dofPlanarLink5Collision2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="6dofPlanarLink5Collision3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Fifth joint  -->
+    <joint name="6dofPlanarJoint5" type="revolute">
+      <parent>6dofPlanarLink4</parent>
+      <child>6dofPlanarLink5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+      </axis>
+    </joint>
+
+
+    <!-- Sixth link  -->
+    <link name="6dofPlanarLink6">
+      <pose>0 4.0 0.6 0 0 0</pose>
+      <visual name="6dofPlanarLink6Visual1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <visual name="6dofPlanarLink6Visual2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <visual name="6dofPlanarLink6Visual3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+      <collision name="6dofPlanarLink6Collision1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="6dofPlanarLink6Collision2">
+        <pose>0 0.4 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.8 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="6dofPlanarLink6Collision3">
+        <pose>0 0.8 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Sixth joint  -->
+    <joint name="6dofPlanarJoint6" type="revolute">
+      <parent>6dofPlanarLink5</parent>
+      <child>6dofPlanarLink6</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Manipulatator end effector -->
+    <link name="6dofPlanarEndEffector">
+      <pose>0 4.8 0.6 0 0 0</pose>
+    </link>
+
+    <!-- End effector joint  -->
+    <joint name="6dofPlanarJointEndEffector" type="fixed">
+      <parent>6dofPlanarLink6</parent>
+      <child>6dofPlanarEndEffector</child>
+    </joint>
+  </model>
+</sdf>

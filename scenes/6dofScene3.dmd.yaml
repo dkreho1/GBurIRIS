@@ -1,0 +1,105 @@
+# 6DOF planar arm with 10 cylinders
+# The assets folder must be added to the parser as a package named assets
+
+directives:
+
+# Add 6DOF planar arm
+- add_model:
+    name: 6dofPlanarArm
+    file: package://assets/6dofPlanarArm.sdf
+- add_weld:
+    parent: world
+    child: 6dofPlanarArm::6dofPlanarBase
+    X_PC:
+        translation: [0, 0, 0.05]
+        
+# Add cylinders
+- add_model:
+    name: cylinder1
+    file: package://assets/cylinder3.sdf
+- add_weld:
+    parent: world
+    child: cylinder1::cylinder_body
+    X_PC:
+        translation: [0.0, 3.75, 0.5]
+
+- add_model:
+    name: cylinder2
+    file: package://assets/cylinder3.sdf
+- add_weld:
+    parent: world
+    child: cylinder2::cylinder_body
+    X_PC:
+        translation: [2.204194696096774, 3.033813728906053, 0.5]
+
+- add_model:
+    name: cylinder3
+    file: package://assets/cylinder3.sdf
+- add_weld:
+    parent: world
+    child: cylinder3::cylinder_body
+    X_PC:
+        translation: [3.5664619361068257, 1.158813728906053, 0.5]
+
+- add_model:
+    name: cylinder4
+    file: package://assets/cylinder3.sdf
+- add_weld:
+    parent: world
+    child: cylinder4::cylinder_body
+    X_PC:
+        translation: [3.566461936106826, -1.1588137289060525, 0.5]
+
+- add_model:
+    name: cylinder5
+    file: package://assets/cylinder3.sdf
+- add_weld:
+    parent: world
+    child: cylinder5::cylinder_body
+    X_PC:
+        translation: [2.2041946960967747, -3.0338137289060527, 0.5]
+
+- add_model:
+    name: cylinder6
+    file: package://assets/cylinder3.sdf
+- add_weld:
+    parent: world
+    child: cylinder6::cylinder_body
+    X_PC:
+        translation: [0.0, -3.75, 0.5]
+
+- add_model:
+    name: cylinder7
+    file: package://assets/cylinder3.sdf
+- add_weld:
+    parent: world
+    child: cylinder7::cylinder_body
+    X_PC:
+        translation: [-2.2041946960967738, -3.033813728906053, 0.5]
+
+- add_model:
+    name: cylinder8
+    file: package://assets/cylinder3.sdf
+- add_weld:
+    parent: world
+    child: cylinder8::cylinder_body
+    X_PC:
+        translation: [-3.5664619361068257, -1.1588137289060534, 0.5]
+
+- add_model:
+    name: cylinder9
+    file: package://assets/cylinder3.sdf
+- add_weld:
+    parent: world
+    child: cylinder9::cylinder_body
+    X_PC:
+        translation: [-3.566461936106826, 1.158813728906052, 0.5]
+
+- add_model:
+    name: cylinder10
+    file: package://assets/cylinder3.sdf
+- add_weld:
+    parent: world
+    child: cylinder10::cylinder_body
+    X_PC:
+        translation: [-2.204194696096775, 3.0338137289060527, 0.5]

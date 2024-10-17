@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="boxObstacle">
+    <link name="box_body">
+      <visual name="box">
+        <pose> 0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.8</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+          <diffuse>0.4 0.4 0.4 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+          <emissive>0.4 0.4 0.4 1</emissive>
+        </material>
+      </visual>
+      <collision name="box">
+        <pose> 0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.8</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
