@@ -64,11 +64,6 @@ class GeneralizedBur:
             if distance < self.minDistance:
                 self.minDistance = distance
 
-        # robotClearance = self.robot.checker.CalcRobotClearance(self.qCenter, self.influenceDistance)
-
-        # minDistance = robotClearance.distances()[np.array(robotClearance.collision_types())
-        #                                          == RobotCollisionType.kEnvironmentCollision].min()
-
         if self.minDistance < 0:
             raise Exception("The robot is in collision with an obstacle!")
         
@@ -186,7 +181,7 @@ class GeneralizedBur:
 
 
         if np.isinf(minDistance):
-            raise Exception("Min distance belaj")
+            raise Exception("Min. distance is infinite (robot may be in collision with a obstacle plane)!")
         
         return minDistance
 
