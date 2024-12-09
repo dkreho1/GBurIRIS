@@ -9,7 +9,7 @@ This repository contains the Python code developed as part of the author's Maste
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/dkreho1/GBurIRIS.git
+   git clone https://github.com/dzenankreho/GBurIRIS.git
    cd GBurIRIS
 
 2. (Optional) Create and activate a virtual environment:
